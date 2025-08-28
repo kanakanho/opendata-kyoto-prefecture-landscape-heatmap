@@ -3,8 +3,8 @@ import maplibregl from 'maplibre-gl'
 const map = new maplibregl.Map({
   container: 'map',
   style: 'https://tile.openstreetmap.jp/styles/osm-bright-ja/style.json', // stylesheet location
-  center: [136.9, 35.0], // starting position [lng, lat]
-  zoom: 9, // starting zoom
+  center: [135.77, 35.004], // starting position [lng, lat]
+  zoom: 12, // starting zoom
 })
 
 map.on('load', () => {
@@ -71,7 +71,7 @@ map.on('load', () => {
       return
     }
     const coordinatePoint = (features[0].geometry as GeoJSON.Point).coordinates.slice()
-    const description = features[0].properties.タイトル
+    const description = `<strong>${features[0].properties.P12_002}</strong><br>${features[0].properties.P12_005}`
 
     new maplibregl.Popup().setLngLat([coordinatePoint[0], coordinatePoint[1]]).setHTML(description).addTo(map)
   })
