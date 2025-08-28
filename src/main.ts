@@ -11,6 +11,7 @@ map.on('load', () => {
   map.addSource('polygons', {
     type: 'geojson',
     data: './population_heatmap.geojson',
+    attribution: '<a href="https://www.geospatial.jp/ckan/dataset/mlit-1km-fromto" target="_blank" rel=”noreferrer noopener”>「全国の人流オープンデータ」（国土交通省）（https://www.geospatial.jp/ckan/dataset/mlit-1km-fromto）を加工して作成</a>',
   })
   map.addLayer({
     id: 'polygons-fill',
@@ -54,6 +55,7 @@ map.on('load', () => {
   map.addSource('point', {
     type: 'geojson',
     data: 'kyoto.geojson',
+    attribution: '<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P12-v2_2.html" target="_blank" rel=”noreferrer noopener”>「国土数値情報（観光資源データ）（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P12-v2_2.html）を加工して作成</a>',
   })
   map.addLayer({
     id: 'point',
